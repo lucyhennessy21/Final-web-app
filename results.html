@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuoteSprint – Results</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-results">
+
+  <!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
+  <header class="navbar">
+    <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
+      <svg class="navbar__logo-icon" viewBox="0 0 40 28" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="18" rx="4" stroke="currentColor" stroke-width="2.5"/>
+        <line x1="9" y1="8" x2="31" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="9" y1="14" x2="22" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 20 L6 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="navbar__logo-text">
+        <span class="navbar__logo-quote">Quote</span><span class="navbar__logo-sprint">Sprint</span>
+      </span>
+    </a>
+
+    <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__nav" id="mainNav" aria-label="Main navigation">
+      <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link navbar__link--active">Home</a></li>
+        <li><a href="#"         class="navbar__link">Scores</a></li>
+        <li><a href="#"         class="navbar__link">About</a></li>
+      </ul>
+      <a href="typing.html" class="btn btn--primary navbar__cta">PLAY</a>
+    </nav>
+  </header>
+  <!-- ─────────────────────────────────────────────────────────────── -->
+
+  <!-- ─── MAIN CONTENT ─────────────────────────────────────────────── -->
+  <main class="results-main">
+
+    <h1 class="results-main__heading">Results</h1>
+
+    <div class="results-layout">
+
+      <!-- ── Left column: stats + actions ────────────────────────── -->
+      <aside class="results-stats" aria-label="Your round statistics">
+
+        <dl class="results-stats__list">
+
+          <div class="results-stats__row">
+            <dt class="results-stats__label">Score:</dt>
+            <dd class="results-stats__value results-stats__value--highlight" id="statScore">—</dd>
+          </div>
+
+          <div class="results-stats__row">
+            <dt class="results-stats__label">WPM:</dt>
+            <dd class="results-stats__value results-stats__value--highlight" id="statWpm">—</dd>
+          </div>
+
+          <div class="results-stats__row">
+            <dt class="results-stats__label">Accuracy:</dt>
+            <dd class="results-stats__value results-stats__value--highlight" id="statAccuracy">—</dd>
+          </div>
+
+          <div class="results-stats__row">
+            <dt class="results-stats__label">Time:</dt>
+            <dd class="results-stats__value results-stats__value--highlight" id="statTime">—</dd>
+          </div>
+
+        </dl>
+
+        <div class="results-actions">
+          <button class="btn btn--primary btn--wide" id="nextRoundBtn" type="button">
+            Next Round
+          </button>
+          <button class="btn btn--primary btn--wide" id="changeSettingsBtn" type="button">
+            Change Settings
+          </button>
+        </div>
+
+      </aside>
+
+      <!-- ── Right column: quote image card ───────────────────────── -->
+      <section class="results-quote-card" aria-label="Quote and image">
+        <!--
+          API HOOK: The API person should set:
+            1. The background image via  results-quote-card__image's `src`
+            2. The quote text in  results-quote-card__text
+
+          The JS below reads quoteText and imageUrl from sessionStorage
+          and populates both automatically.
+        -->
+        <div class="results-quote-card__image-wrapper">
+          <img
+            class="results-quote-card__image"
+            id="quoteImage"
+            src=""
+            alt=""
+            aria-hidden="true"
+          />
+          <blockquote class="results-quote-card__text" id="quoteText">
+            <!-- Quote text injected by JS -->
+          </blockquote>
+        </div>
+      </section>
+
+    </div><!-- /results-layout -->
+
+  </main>
+  <!-- ─────────────────────────────────────────────────────────────── -->
+
+  <script>
+    
+  </script>
+
+</body>
+</html>

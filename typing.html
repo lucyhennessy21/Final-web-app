@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuoteSprint – Typing Round</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-typing">
+  <!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
+  <header class="navbar">
+    <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
+      <svg class="navbar__logo-icon" viewBox="0 0 40 28" fill="none" aria-hidden="true">
+        <rect x="2" y="2" width="36" height="18" rx="4" stroke="currentColor" stroke-width="2.5"/>
+        <line x1="9" y1="8" x2="31" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="9" y1="14" x2="22" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M10 20 L6 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="navbar__logo-text">
+        <span class="navbar__logo-quote">Quote</span><span class="navbar__logo-sprint">Sprint</span>
+      </span>
+    </a>
+
+    <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="navbar__nav" id="mainNav" aria-label="Main navigation">
+      <ul class="navbar__links">
+        <li><a href="home.html" class="navbar__link">Home</a></li>
+        <li><a href="#"         class="navbar__link">Scores</a></li>
+        <li><a href="#"         class="navbar__link">About</a></li>
+      </ul>
+      <a href="typing.html" class="btn btn--primary navbar__cta navbar__cta--active">PLAY</a>
+    </nav>
+  </header>
+  <!-- ─────────────────────────────────────────────────────────────── -->
+
+  <!-- ─── MAIN CONTENT ─────────────────────────────────────────────── -->
+  <main class="typing-main">
+
+    <h1 class="typing-main__heading">Typing Round</h1>
+
+    <!-- Live stats bar -->
+    <div class="typing-stats" role="status" aria-live="polite" aria-label="Live round stats">
+      <div class="typing-stats__item typing-stats__item--timer">
+        <span class="typing-stats__value" id="timerDisplay">00:00</span>
+      </div>
+      <div class="typing-stats__divider" aria-hidden="true"></div>
+      <div class="typing-stats__item">
+        <span class="typing-stats__label">WPM</span>
+      </div>
+      <div class="typing-stats__divider" aria-hidden="true"></div>
+      <div class="typing-stats__item">
+        <span class="typing-stats__value" id="wpmDisplay">0</span>
+      </div>
+    </div>
+
+    <!-- Quote display area
+         Each character is wrapped in a <span> by JS with one of three classes:
+           .char--pending   = not yet typed (faded)
+           .char--correct   = typed correctly (bright white)
+           .char--incorrect = typed wrong (red/orange)
+           .char--cursor    = the next character to type (blinking cursor)
+    -->
+    <section class="typing-arena" aria-label="Typing area">
+      <div
+        class="typing-arena__quote"
+        id="quoteDisplay"
+        aria-label="Quote to type"
+        aria-live="off"
+      >
+        <!--
+          API HOOK: The API person should populate this div with
+          <span> elements via JS before the round starts.
+          Example of what JS will produce for each character:
+            <span class="char char--pending">I</span>
+            <span class="char char--pending"> </span>
+            ...
+          The JS below (renderQuote) handles this automatically
+          once you pass it the quote string.
+        -->
+      </div>
+
+      <!--
+        Hidden accessible input — the user types into this.
+        It is visually hidden but receives keyboard focus so
+        the on-screen quote reacts to every keystroke.
+      -->
+      <input
+        class="typing-arena__hidden-input"
+        id="typingInput"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        aria-label="Type the quote here"
+        aria-describedby="quoteDisplay"
+      />
+    </section>
+
+    <!-- Action buttons -->
+    <div class="typing-actions">
+      <button class="btn btn--primary" id="restartBtn" type="button">Restart Round</button>
+      <!--
+        The "Results" button is hidden until the round ends.
+        JS adds class .typing-actions__results--visible to show it.
+      -->
+      <button class="btn btn--primary typing-actions__results" id="resultsBtn" type="button" hidden>
+        Results
+      </button>
+    </div>
+
+  </main>
+  <!-- ─────────────────────────────────────────────────────────────── -->
+
+  <script>
+   </script>
+
+</body>
+</html>
