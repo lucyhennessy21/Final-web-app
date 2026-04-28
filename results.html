@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QuoteSprint – Results</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="page-results">
 
   <!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
   <header class="navbar">
-     <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
+    <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
       <img src="images/quotesprint.png" alt="QuoteSprint logo" class="navbar__logo-img" />
     </a>
 
@@ -23,9 +22,9 @@
 
     <nav class="navbar__nav" id="mainNav" aria-label="Main navigation">
       <ul class="navbar__links">
-        <li><a href="home.html" class="navbar__link navbar__link--active">Home</a></li>
-        <li><a href="#"         class="navbar__link">Scores</a></li>
-        <li><a href="#"         class="navbar__link">About</a></li>
+        <li><a href="home.html" class="navbar__link">Home</a></li>
+        <li><a href="results.html" class="navbar__link navbar__link--active">Scores</a></li>
+        <li><a href="#" class="navbar__link">About</a></li>
       </ul>
       <a href="typing.html" class="btn btn--primary navbar__cta">PLAY</a>
     </nav>
@@ -39,45 +38,35 @@
 
     <div class="results-layout">
 
-      <!-- ── Left column: stats + actions ────────────────────────── -->
-      <aside class="results-stats" aria-label="Your round statistics">
 
+      <!-- Stats -->
+      <aside class="results-stats" aria-label="Your round statistics">
         <dl class="results-stats__list">
 
           <div class="results-stats__row">
             <dt class="results-stats__label">Score:</dt>
-            <dd class="results-stats__value results-stats__value--highlight" id="statScore">—</dd>
+            <dd class="results-stats__value results-stats__value--highlight" id="statScore">890</dd>
           </div>
 
           <div class="results-stats__row">
             <dt class="results-stats__label">WPM:</dt>
-            <dd class="results-stats__value results-stats__value--highlight" id="statWpm">—</dd>
+            <dd class="results-stats__value results-stats__value--highlight" id="statWpm">72</dd>
           </div>
 
           <div class="results-stats__row">
             <dt class="results-stats__label">Accuracy:</dt>
-            <dd class="results-stats__value results-stats__value--highlight" id="statAccuracy">—</dd>
+            <dd class="results-stats__value results-stats__value--highlight" id="statAccuracy">92%</dd>
           </div>
 
           <div class="results-stats__row">
             <dt class="results-stats__label">Time:</dt>
-            <dd class="results-stats__value results-stats__value--highlight" id="statTime">—</dd>
+            <dd class="results-stats__value results-stats__value--highlight" id="statTime">45s</dd>
           </div>
 
         </dl>
-
-        <div class="results-actions">
-          <button class="btn btn--primary btn--wide" id="nextRoundBtn" type="button">
-            Next Round
-          </button>
-          <button class="btn btn--primary btn--wide" id="changeSettingsBtn" type="button">
-            Change Settings
-          </button>
-        </div>
-
       </aside>
 
-      <!-- ── Right column: quote image card ───────────────────────── -->
+      <!-- Image + quote -->
       <section class="results-quote-card" aria-label="Quote and image">
         <!--
           API HOOK: The API person should set:
@@ -88,27 +77,34 @@
           and populates both automatically.
         -->
         <div class="results-quote-card__image-wrapper">
-          <img
-            class="results-quote-card__image"
-            id="quoteImage"
-            src=""
-            alt=""
-            aria-hidden="true"
-          />
+          <img class="results-quote-card__image" id="quoteImage" src="images/sailboat.jpg" alt="Sailboat" />
+
           <blockquote class="results-quote-card__text" id="quoteText">
-            <!-- Quote text injected by JS -->
+            “I can’t change the direction of the wind, but I can adjust my sails to always reach my destination.”
           </blockquote>
         </div>
       </section>
 
-    </div><!-- /results-layout -->
+      <!-- Buttons -->
+      <div class="results-actions">
+        <a href="typing.html" class="btn btn--primary btn--wide" id="nextRoundBtn">
+          Next Round
+        </a>
+
+        <a href="home.html" class="btn btn--primary btn--wide" id="changeSettingsBtn">
+          Change Settings
+        </a>
+      </div>
+
+    </div>
 
   </main>
   <!-- ─────────────────────────────────────────────────────────────── -->
 
   <script>
-    
+
   </script>
 
 </body>
+
 </html>
