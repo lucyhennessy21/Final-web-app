@@ -7,26 +7,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="page-typing">
   <!-- ─── NAVBAR ─────────────────────────────────────────────────── -->
   <header class="navbar">
-    <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
-      <svg class="navbar__logo-icon" viewBox="0 0 40 28" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="36" height="18" rx="4" stroke="currentColor" stroke-width="2.5"/>
-        <line x1="9" y1="8" x2="31" y2="8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="9" y1="14" x2="22" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M10 20 L6 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <span class="navbar__logo-text">
-        <span class="navbar__logo-quote">Quote</span><span class="navbar__logo-sprint">Sprint</span>
-      </span>
+     <a href="home.html" class="navbar__logo" aria-label="QuoteSprint home">
+      <img src="images/quotesprint.png" alt="QuoteSprint logo" class="navbar__logo-img" />
     </a>
 
     <button class="navbar__hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
@@ -78,6 +65,7 @@
         aria-label="Quote to type"
         aria-live="off"
       >
+      This is just place holder text so that the quote box doesn't look empty! Remove it later!
         <!--
           API HOOK: The API person should populate this div with
           <span> elements via JS before the round starts.
@@ -115,7 +103,7 @@
         The "Results" button is hidden until the round ends.
         JS adds class .typing-actions__results--visible to show it.
       -->
-      <button class="btn btn--primary typing-actions__results" id="resultsBtn" type="button" hidden>
+      <button class="btn btn--primary typing-actions__results" id="resultsBtn" type="button">
         Results
       </button>
     </div>
