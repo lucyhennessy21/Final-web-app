@@ -572,9 +572,7 @@ body {
 }
 
 
-/* =========================
-   Results Screen - Mobile
-========================= */
+/*Results Screen - Mobile*/
 
 .results-main {
   padding: 1.6rem 0 2rem;
@@ -653,9 +651,18 @@ body {
 .results-quote-card__image-wrapper {
   position: relative;
   width: 100%;
-  height: 230px;
+  height: 300px;
   overflow: hidden;
   background: linear-gradient(135deg, #0d2445, #173f70);
+}
+
+/* transparent overlay so quote stands out */
+.results-quote-card__image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 10, 25, 0.35);
+  z-index: 1;
 }
 
 .results-quote-card__image {
@@ -663,6 +670,7 @@ body {
   height: 100%;
   display: block;
   object-fit: cover;
+  object-position: center;
 }
 
 .results-quote-card__image[src=""] {
@@ -671,16 +679,20 @@ body {
 
 .results-quote-card__text {
   position: absolute;
-  top: 1.1rem;
-  left: 1rem;
-  right: 1rem;
-  max-width: 85%;
+  top: 50%;
+  left: 50%;
+  width: 82%;
+  max-width: 520px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
   font-family: "Courier New", monospace;
-  font-size: 0.78rem;
-  line-height: 1.35;
+  font-size: 0.85rem;
+  line-height: 1.4;
   font-weight: 700;
   color: var(--text-light);
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
 }
 
 /* Buttons below image on mobile */
@@ -709,9 +721,7 @@ body {
 }
 
 
-/* =========================
-   Results Screen - Desktop
-========================= */
+/*Results Screen - Desktop*/
 
 @media (min-width: 768px) {
   .results-main {
@@ -731,9 +741,6 @@ body {
     display: none;
   }
 
-  /* Desktop order:
-     stats/buttons on left, image on right
-  */
   .results-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -745,6 +752,7 @@ body {
   }
 
   .results-stats {
+    grid-area: stats;
     margin-top: 3.2rem;
     margin-bottom: 1.5rem;
     text-align: left;
@@ -764,23 +772,67 @@ body {
     font-size: 1.6rem;
   }
 
+  .results-quote-card {
+    grid-area: quote;
+    width: 100%;
+  }
+
   .results-quote-card__image-wrapper {
+    position: relative;
+    width: 100%;
     height: 430px;
+    overflow: hidden;
     border-radius: 10px;
+    background: linear-gradient(135deg, #0d2445, #173f70);
+  }
+
+  .results-quote-card__image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 10, 25, 0.35);
+    border-radius: 10px;
+    z-index: 1;
   }
 
   .results-quote-card__image {
+    width: 100%;
     height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
     border-radius: 10px;
   }
 
-  .results-quote-card__text {
+  .results-quote-card__image[src=""] {
     display: none;
   }
 
+  .results-quote-card__text {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 75%;
+    max-width: 620px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+    font-family: "Courier New", monospace;
+    font-size: 1.25rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+  }
+
   .results-actions {
+    grid-area: actions;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
@@ -788,6 +840,11 @@ body {
   .results-actions .btn--wide {
     width: 210px;
     min-height: 55px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.1rem;
+    font-weight: 700;
   }
 }
